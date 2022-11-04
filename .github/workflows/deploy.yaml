@@ -23,17 +23,17 @@ jobs:
       # - run: docker push ankush1729/multi-server-10-14
       # - run: docker push ankush1729/multi-worker-10-14
  
-      # - name: Generate deployment package
-      #   run: zip -r deploy.zip . -x '*.git*'
+      - name: Generate deployment package
+        run: zip -r deploy.zip . -x '*.git*'
  
-      # - name: Deploy to EB
-      #   uses: einaregilsson/beanstalk-deploy@v18
-      #   with:
-      #     aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
-      #     aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-      #     application_name: multi-gh
-      #     environment_name: Multigh-env
-      #     existing_bucket_name: elasticbeanstalk-us-east-1-923445559289
-      #     region: us-east-1
-      #     version_label: ${{ github.sha }}
-      #     deployment_package: deploy.zip
+      - name: Deploy to EB
+        uses: ankush/beanstalk-deploy@v18
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
+          application_name: docker-react
+          environment_name: dockerreact-env
+          existing_bucket_name: elasticbeanstalk-ap-south-1-051170420061
+          region: ap-south-1
+          version_label: ${{ github.sha }}
+          deployment_package: deploy.zip
