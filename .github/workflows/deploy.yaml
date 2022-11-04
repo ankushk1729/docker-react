@@ -13,15 +13,15 @@ jobs:
       - run: docker build -t ankush1729/docker-react -f Dockerfile.dev .
       - run: docker run -e CI=true ankush1729/docker-react npm run test
  
-      # - run: docker build -t ankush1729/multi-client-10-14 ./client
-      # - run: docker build -t ankush1729/multi-nginx-10-14 ./nginx
-      # - run: docker build -t ankush1729/multi-server-10-14 ./server
-      # - run: docker build -t ankush1729/multi-worker-10-14 ./worker
+      - run: docker build -t ankush1729/multi-client-10-14 ./client
+      - run: docker build -t ankush1729/multi-nginx-10-14 ./nginx
+      - run: docker build -t ankush1729/multi-server-10-14 ./server
+      - run: docker build -t ankush1729/multi-worker-10-14 ./worker
  
-      # - run: docker push ankush1729/multi-client-10-14
-      # - run: docker push ankush1729/multi-nginx-10-14
-      # - run: docker push ankush1729/multi-server-10-14
-      # - run: docker push ankush1729/multi-worker-10-14  
+      - run: docker push ankush1729/multi-client-10-14
+      - run: docker push ankush1729/multi-nginx-10-14
+      - run: docker push ankush1729/multi-server-10-14
+      - run: docker push ankush1729/multi-worker-10-14  
  
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
