@@ -20,7 +20,7 @@ jobs:
  
       # - run: docker push ankush1729/multi-client-10-14
       # - run: docker push ankush1729/multi-nginx-10-14
-      # - run: docker push ankush1729/multi-server-10-14
+      # - run: docker push ankush1729/multi-server-10-14  
       # - run: docker push ankush1729/multi-worker-10-14  
  
       - name: Generate deployment package
