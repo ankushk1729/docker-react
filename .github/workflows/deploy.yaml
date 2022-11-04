@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: ankushk1729/docker-react/.github/workflows/deploy.yaml@main
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - run: docker build -t ankush1729/docker-react -f Dockerfile.dev .
       - run: docker run -e CI=true ankush1729/docker-react npm run test
