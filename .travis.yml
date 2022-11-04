@@ -10,13 +10,13 @@ services:
 
 before_install:
 
-  - docker build -t mshukla/docker -f Dockerfile.dev .
+  - docker build -t ankush1729/docker-react -f Dockerfile.dev .
 
 
 
 script:
 
-  - docker run -e CI=true mshukla/docker npm run test
+  - docker run -e CI=true ankush1729/docker-react npm run test
 
 
 
