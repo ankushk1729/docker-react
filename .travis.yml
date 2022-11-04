@@ -36,7 +36,7 @@ deploy:
 
   on:
 
-    branch: master
+    branch: main
 
   access_key_id: $AWS_ACCESS_KEY
 
