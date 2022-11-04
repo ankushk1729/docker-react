@@ -27,7 +27,7 @@ jobs:
         run: zip -r deploy.zip . -x '*.git*'
  
       - name: Deploy to EB
-        uses: ankushk1729/docker-react.github/actions/deploy.yaml@main
+        uses: ankushk1729/docker-react/.github/workflows/deploy.yaml@main
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
